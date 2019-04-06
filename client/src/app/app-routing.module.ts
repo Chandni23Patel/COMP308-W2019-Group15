@@ -21,6 +21,12 @@ import { VitalsDeleteComponent } from './vitals/vitals-delete/vitals-delete.comp
 import { PatientListComponent } from './patient/patient-list/patient-list.component';
 import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
 import { PatientDeleteComponent } from './patient/patient-delete/patient-delete.component';
+import { MedicineListComponent } from './medicine/medicine-list/medicine-list.component';
+import { MedicineDeleteComponent } from './medicine/medicine-delete/medicine-delete.component';
+import { MedicineDetailsComponent } from './medicine/medicine-details/medicine-details.component';
+import { PatienthistoryListComponent } from './patienthistory/patienthistory-list/patienthistory-list.component';
+import { PatienthistoryDeleteComponent } from './patienthistory/patienthistory-delete/patienthistory-delete.component';
+import { PatienthistoryDetailsComponent } from './patienthistory/patienthistory-details/patienthistory-details.component';
 
 const routes: Routes = [
 //basic path for site
@@ -37,14 +43,23 @@ const routes: Routes = [
 //patient path
   {path: 'patient/patient-list', component: PatientListComponent, data: {title: 'Contact List'}, canActivate: [AuthGuard]},
   {path: 'patient/patient-list/add', component: PatientDetailsComponent, data: {title: 'Add Contact'}, canActivate: [AuthGuard]},
-  {path: 'contact/patient-list/edit/:id', component: PatientDetailsComponent, data: {title: 'Edit Contact'}, canActivate: [AuthGuard]},
-  {path: 'contact/patient-list/delete/:id', component: PatientDeleteComponent, data: {title: 'Delete Contact'}, canActivate: [AuthGuard]},
+  {path: 'patient/patient-list/edit/:id', component: PatientDetailsComponent, data: {title: 'Edit Contact'}, canActivate: [AuthGuard]},
+  {path: 'patient/patient-list/delete/:id', component: PatientDeleteComponent, data: {title: 'Delete Contact'}, canActivate: [AuthGuard]},
+//patienthistory path
+  {path: 'patienthistory/patienthistory-list', component: PatienthistoryListComponent, data: {title: 'Contact List'}, canActivate: [AuthGuard]},
+  {path: 'patienthistory/patienthistory-list/add', component: PatienthistoryDetailsComponent, data: {title: 'Add Contact'}, canActivate: [AuthGuard]},
+  {path: 'patienthistory/patienthistory-list/edit/:id', component: PatienthistoryDetailsComponent, data: {title: 'Edit Contact'}, canActivate: [AuthGuard]},
+  {path: 'patienthistory/patienthistory-list/delete/:id', component: PatienthistoryDeleteComponent, data: {title: 'Delete Contact'}, canActivate: [AuthGuard]},
+//medicine path
+  {path: 'medicine/medicine-list', component: MedicineListComponent, data: {title: 'Contact List'}, canActivate: [AuthGuard]},
+  {path: 'medicine/medicine-list/add', component: MedicineDetailsComponent, data: {title: 'Add Contact'}, canActivate: [AuthGuard]},
+  {path: 'medicine/medicine-list/edit/:id', component: MedicineDetailsComponent, data: {title: 'Edit Contact'}, canActivate: [AuthGuard]},
+  {path: 'medicine/medicine-list/delete/:id', component: MedicineDeleteComponent, data: {title: 'Delete Contact'}, canActivate: [AuthGuard]},
 //Vitals path
   {path: 'vital/vital-list', component: VitalsListComponent, data: {title: 'Vital List'}, canActivate: [AuthGuard]},
   {path: 'vital/vital-list/add', component: VitalsDetailsComponent, data: {title: 'Add Vitals'}, canActivate: [AuthGuard]},
   {path: 'vital/vital-list/edit/:id', component: VitalsDetailsComponent, data: {title: 'Edit Vitals'}, canActivate: [AuthGuard]},
   {path: 'vital/vital-list/delete/:id', component: VitalsDeleteComponent, data: {title: 'Delete Vitals'}, canActivate: [AuthGuard]},
-
 //login and registration path
   {path: 'register', component: RegisterComponent, data: {title: 'Register'}},
   {path: 'login', component: LoginComponent, data: {title: 'Login'}},
