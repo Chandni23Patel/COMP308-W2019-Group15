@@ -29,6 +29,18 @@ import { AuthService } from './services/auth.service';
 
 // route guards
 import { AuthGuard } from './guards/auth.guard';
+import { PatientDeleteComponent } from './patient/patient-delete/patient-delete.component';
+import { PatientListComponent } from './patient/patient-list/patient-list.component';
+import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
+import { MedicineDeleteComponent } from './medicine/medicine-delete/medicine-delete.component';
+import { MedicineDetailsComponent } from './medicine/medicine-details/medicine-details.component';
+import { MedicineListComponent } from './medicine/medicine-list/medicine-list.component';
+import { VitalsListComponent } from './vitals/vitals-list/vitals-list.component';
+import { VitalsDetailsComponent } from './vitals/vitals-details/vitals-details.component';
+import { VitalsDeleteComponent } from './vitals/vitals-delete/vitals-delete.component';
+import { PatienthistoryDeleteComponent } from './patienthistory/patienthistory-delete/patienthistory-delete.component';
+import { PatienthistoryDetailsComponent } from './patienthistory/patienthistory-details/patienthistory-details.component';
+import { PatienthistoryListComponent } from './patienthistory/patienthistory-list/patienthistory-list.component';
 
 export function jwtTokenGetter() {
   return localStorage.getItem('id_token');
@@ -50,7 +62,19 @@ export function jwtTokenGetter() {
     ContactDetailsComponent,
     ContactDeleteComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    PatientDeleteComponent,
+    PatientListComponent,
+    PatientDetailsComponent,
+    MedicineDeleteComponent,
+    MedicineDetailsComponent,
+    MedicineListComponent,
+    VitalsListComponent,
+    VitalsDetailsComponent,
+    VitalsDeleteComponent,
+    PatienthistoryDeleteComponent,
+    PatienthistoryDetailsComponent,
+    PatienthistoryListComponent
   ],
   imports: [
     BrowserModule,
