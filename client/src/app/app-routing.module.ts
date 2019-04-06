@@ -15,23 +15,41 @@ import { ContactDeleteComponent } from './contacts/contact-delete/contact-delete
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { VitalsListComponent } from './vitals/vitals-list/vitals-list.component';
+import { VitalsDetailsComponent } from './vitals/vitals-details/vitals-details.component';
+import { VitalsDeleteComponent } from './vitals/vitals-delete/vitals-delete.component';
+import { PatientListComponent } from './patient/patient-list/patient-list.component';
+import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
+import { PatientDeleteComponent } from './patient/patient-delete/patient-delete.component';
 
 const routes: Routes = [
+//basic path for site
   {path: 'home', component: HomeComponent, data: {title: 'Home'}},
   {path: 'about', component: AboutComponent, data: {title: 'About'}},
   {path: 'products', component: ProductsComponent, data: {title: 'Products'}},
   {path: 'services', component: ServicesComponent, data: {title: 'Services'}},
   {path: 'contact', component: ContactComponent, data: {title: 'Contact'}},
-
+//contact path
   {path: 'contact/contact-list', component: ContactListComponent, data: {title: 'Contact List'}, canActivate: [AuthGuard]},
   {path: 'contact/contact-list/add', component: ContactDetailsComponent, data: {title: 'Add Contact'}, canActivate: [AuthGuard]},
   {path: 'contact/contact-list/edit/:id', component: ContactDetailsComponent, data: {title: 'Edit Contact'}, canActivate: [AuthGuard]},
   {path: 'contact/contact-list/delete/:id', component: ContactDeleteComponent, data: {title: 'Delete Contact'}, canActivate: [AuthGuard]},
+//patient path
+  {path: 'patient/patient-list', component: PatientListComponent, data: {title: 'Contact List'}, canActivate: [AuthGuard]},
+  {path: 'patient/patient-list/add', component: PatientDetailsComponent, data: {title: 'Add Contact'}, canActivate: [AuthGuard]},
+  {path: 'contact/patient-list/edit/:id', component: PatientDetailsComponent, data: {title: 'Edit Contact'}, canActivate: [AuthGuard]},
+  {path: 'contact/patient-list/delete/:id', component: PatientDeleteComponent, data: {title: 'Delete Contact'}, canActivate: [AuthGuard]},
+//Vitals path
+  {path: 'vital/vital-list', component: VitalsListComponent, data: {title: 'Vital List'}, canActivate: [AuthGuard]},
+  {path: 'vital/vital-list/add', component: VitalsDetailsComponent, data: {title: 'Add Vitals'}, canActivate: [AuthGuard]},
+  {path: 'vital/vital-list/edit/:id', component: VitalsDetailsComponent, data: {title: 'Edit Vitals'}, canActivate: [AuthGuard]},
+  {path: 'vital/vital-list/delete/:id', component: VitalsDeleteComponent, data: {title: 'Delete Vitals'}, canActivate: [AuthGuard]},
 
+//login and registration path
   {path: 'register', component: RegisterComponent, data: {title: 'Register'}},
   {path: 'login', component: LoginComponent, data: {title: 'Login'}},
   {path: 'logout', redirectTo: '/login', pathMatch: 'full'},
-
+//default path
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 
