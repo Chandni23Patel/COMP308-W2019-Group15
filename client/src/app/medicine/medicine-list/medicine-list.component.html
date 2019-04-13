@@ -1,3 +1,40 @@
-<p>
-  medicine-list works!
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <h1>Medicine List</h1>
+            <a class="btn btn-primary" routerLink="add" role="button">
+            <i class="fas fa-plus-circle"></i> Add a medicine</a>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <tr>
+
+                    <th class="text-center">Medicine Name</th>
+                    <th class="text-center">Type</th>
+                    <th class="text-center">Description</th>
+                    <th class="text-center"></th>
+                    <th class="text-center"></th>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+                    <tr *ngFor="let medicine of medicines">
+
+                        <td class="text-center">{{medicine.medicineName}}</td>
+                        <td class="text-center">{{medicine.type}}</td>
+                        <td class="text-center">{{medicine.description}}</td>
+
+                        <td class="text-center">
+                        <a routerLink="edit/{{medicine._id}}"
+                            class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Edit</a>
+                        </td>
+
+                        <td class="text-center">
+                                <a routerLink="delete/{{medicine._id}}" (click)="onDeleteClick()"
+                                    class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
+                                </td>
+                    </tr>
+            </table>
+
+        </div>
+    </div>
+  </div>
