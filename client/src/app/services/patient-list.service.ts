@@ -12,9 +12,9 @@ export class PatientListService {
   private user: User;
   private authToken: any = null;
 
-  private endpoint = 'https://comp308-w2019-lesson10a.herokuapp.com/api/patient-list/';
+  //private endpoint = 'https://comp308-w2019-lesson10a.herokuapp.com/api/patient-list/';
 
-  //private endpoint = 'http://localhost:3000/api/patient-list/';
+  private endpoint = 'http://localhost:3000/api/patient-list/';
 
   private httpOptions = {
     headers: new HttpHeaders({
