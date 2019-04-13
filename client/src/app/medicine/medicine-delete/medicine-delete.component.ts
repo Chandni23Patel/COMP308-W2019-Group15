@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Medicine } from 'src/app/models/medicine';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FlashMessagesService } from 'angular2-flash-messages';
 import { MedicineListService } from 'src/app/services/medicine-list.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
+import { Medicine } from 'src/app/models/medicine';
 
 @Component({
   selector: 'app-medicine-delete',
@@ -23,7 +23,10 @@ export class MedicineDeleteComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {
+  ngOnIn
+  ngOnInit(): void {
+    throw new Error("Method not implemented.");
+  }it() {
     this.title = this.activateRoute.snapshot.data.title;
     this.medicine = new Medicine();
 
