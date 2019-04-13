@@ -35,9 +35,10 @@ module.exports.processAddPage = (req, res, next) => {
         }
         else {
             res.json({success: true, msg: 'Successfully Added New Medicine'});
-        
+        }
     });
 }
+
 
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
