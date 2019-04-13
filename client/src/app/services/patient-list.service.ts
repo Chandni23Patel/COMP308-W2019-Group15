@@ -12,9 +12,9 @@ export class PatientListService {
   private user: User;
   private authToken: any = null;
 
-  private endpoint = 'https://comp308-w2019-lesson10a.herokuapp.com/api/patient-list/';
+  //private endpoint = 'https://comp308-w2019-lesson10a.herokuapp.com/api/patient-list/';
 
-  //private endpoint = 'http://localhost:3000/api/patient-list/';
+  private endpoint = 'http://localhost:3000/api/patient-list/';
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -43,19 +43,19 @@ export class PatientListService {
   public getPatient(patient: Patient): Observable<any> {
     this.loadToken();
     this.httpOptions.headers = this.httpOptions.headers.set('Authorization', this.authToken);
-    return this.http.get<any>(this.endpoint + 'edit/' + patient.patientNumber, this.httpOptions);
+    return this.http.get<any>(this.endpoint + 'edit/' + patient._id, this.httpOptions);
   }
 
   public editPatient(patient: Patient): Observable<any> {
     this.loadToken();
     this.httpOptions.headers = this.httpOptions.headers.set('Authorization', this.authToken);
-    return this.http.post<any>(this.endpoint + 'edit/' + patient.patientNumber, patient, this.httpOptions);
+    return this.http.post<any>(this.endpoint + 'edit/' + patient._id, patient, this.httpOptions);
   }
 
   public deletePatient(patient: Patient): Observable<any> {
     this.loadToken();
     this.httpOptions.headers = this.httpOptions.headers.set('Authorization', this.authToken);
-    return this.http.get<any>(this.endpoint + 'delete/' + patient.patientNumber, this.httpOptions);
+    return this.http.get<any>(this.endpoint + 'delete/' + patient._id, this.httpOptions);
   }
 
   public loadToken() {

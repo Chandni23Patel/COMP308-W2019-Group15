@@ -27,7 +27,7 @@ export class PatientDeleteComponent implements OnInit {
     this.patient = new Patient();
 
     this.activateRoute.params.subscribe(params => {
-      this.patient.patientNumber = params.id;
+      this.patient._id = params.id;
     });
 
     this.deletePatient(this.patient);

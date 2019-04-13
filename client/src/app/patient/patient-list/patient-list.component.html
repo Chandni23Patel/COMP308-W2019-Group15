@@ -25,12 +25,12 @@
                       <td class="text-center">{{patient.age}}</td>
                       <td class="text-center">{{patient.allergies}}</td>
                       <td class="text-center">
-                      <a routerLink="edit/{{patient.patientNumber}}"
+                      <a routerLink="edit/{{patient._id}}"
                           class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Edit</a>
                       </td>
 
                       <td class="text-center">
-                              <a routerLink="delete/{{patient.patientNumber}}" (click)="onDeleteClick()"
+                              <a routerLink="delete/{{patient._id}}" (click)="onDeleteClick()"
                                   class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
                               </td>
                   </tr>

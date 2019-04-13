@@ -28,7 +28,7 @@ export class PatientDetailsComponent implements OnInit {
 
     // fills in the Patient._id property from the url
     this.activatedRoute.params.subscribe(params => {
-      this.patient.patientNumber = params.patientNumber;
+      this.patient._id = params.id;
     });
 
     if (this.title === 'Edit Patient') {

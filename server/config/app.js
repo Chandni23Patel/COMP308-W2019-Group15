@@ -32,7 +32,7 @@ mongoDB.once('open', ()=> {
 
 let indexRouter = require('../routes/index');
 let contactRouter = require('../routes/contact');
-
+let patientRouter = require('../routes/patient');
 
 let app = express();
 
@@ -96,6 +96,7 @@ passport.use(strategy);
 
 app.use('/api', indexRouter);
 app.use('/api/contact-list', passport.authenticate('jwt', {session: false}), contactRouter); // TODO -> add security
+app.use('/api/patient-list', passport.authenticate('jwt', {session: false}), patientRouter);
 app.get('*', (req, res) => {
   res.sendfile(path.join(__dirname, '../../public/index.html'));
 });

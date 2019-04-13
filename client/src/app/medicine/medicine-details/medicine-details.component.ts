@@ -28,7 +28,7 @@ export class MedicineDetailsComponent implements OnInit {
 
     // fills in the Medicine._id property from the url
     this.activatedRoute.params.subscribe(params => {
-      this.medicine._id = params._id;
+      this.medicine._id = params.id;
     });
 
     if (this.title === 'Edit Medicine') {
