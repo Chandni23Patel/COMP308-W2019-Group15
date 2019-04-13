@@ -1,42 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactListService } from 'src/app/services/contact-list.service';
+import { PatientListService } from 'src/app/services/patient-list.service';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
-
-import { Contact } from 'src/app/models/contact';
+import { Patient } from 'src/app/models/patient';
 
 @Component({
   selector: 'app-patient-list',
   templateUrl: './patient-list.component.html',
   styleUrls: ['./patient-list.component.css']
 })
-export class PatientsDetailComponent implements OnInit {
+export class PatientListComponent implements OnInit {
+  patients: Patient[];
 
-  patients = {};
-
-  constructor(private route: ActivatedRoute, private router: Router, private fs: FsService) { }
+  constructor(
+    private patientListService: PatientListService,
+    private flashMessages: FlashMessagesService,
+    private router: Router
+    )
+    { }
 
   ngOnInit() {
-    this.getPatientsDetails(this.route.snapshot.params['id']);
+    this.patients = new Array<Patient>();
+
+    this.displayPatientList();
   }
 
-  getPatientsDetails(id) {
-    this.fs.getPatient(id)
-      .subscribe(data => {
-        console.log(data);
-        this.patients = data;
-      });
+  private displayPatientList(): void {
+    this.patientListService.getList().subscribe(data => {
+      if(data.success) {
+        this.patients = data.patientList;
+      } else {
+        this.flashMessages.show('User must be looged-in', {cssClass: 'alert-danger', timeOut: 3000});
+      }
+    });
   }
 
-  deletePatients(id) {
-    this.fs.deletePatients(id)
-      .subscribe(res => {
-          this.router.navigate(['/patients']);
-        }, (err) => {
-          console.log(err);
-        }
-      );
+  private onDeleteClick(): void {
+    if(!confirm('Are You Sure?')) {
+      this.router.navigate(['/patient/patient-list']);
+    }
   }
 
 }

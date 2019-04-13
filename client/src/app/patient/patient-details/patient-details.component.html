@@ -1,0 +1,73 @@
+<!-- Content for the Edit Page -->
+<div class="container">
+  <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+          <h1>{{ title }}</h1>
+
+          <form class="form" (submit)="onPatientDetailsSubmit()">
+              <div class="form-group">
+                  <label for="PatientNumberTextField">Patient Number</label>
+                  <input type="text" class="form-control"
+                  id="PatientNumberTextField"
+                  placeholder="Enter Patient Number"
+                  name="patientNumber"
+                  [(ngModel)]="patient.patientNumber"
+                  value="{{ patient.patientNumber }}"
+                  required>
+              </div>
+
+              <div class="form-group">
+                <label for="FirstNameTextField">First Name</label>
+                <input type="text" class="form-control"
+                id="FirstNameTextField"
+                placeholder="Enter First Name"
+                name="firstName"
+                [(ngModel)]="patient.firstName"
+                value="{{ patient.firstName }}"
+                required>
+            </div>
+
+              <div class="form-group">
+                  <label for="LastNameTextField">Last Name</label>
+                  <input type="text" class="form-control"
+                  id="LastNameTextField"
+                  placeholder="Enter Last Name"
+                  name="lastName"
+                  [(ngModel)]="patient.lastName"
+                  value="{{ patient.lastName }}"
+                  required>
+              </div>
+
+              <div class="form-group">
+                  <label for="AgeTextField">Age</label>
+                  <input type="text" class="form-control"
+                  id="AgeTextField"
+                  placeholder="Enter Age"
+                  name="age"
+                  [(ngModel)]="patient.age"
+                  value="{{ patient.age }}"
+                  required>
+              </div>
+
+
+              <div class="form-group">
+                <label for="AgeTextField">Allergies</label>
+                <input type="text" class="form-control"
+                id="AllergiesTextField"
+                placeholder="Enter Allergies"
+                name="allergies"
+                [(ngModel)]="patient.allergies"
+                value="{{ patient.allergies}}"
+                required>
+            </div>
+
+              <button type="submit" class="btn btn-primary">
+              <i class="fas fa-edit"></i> {{ title }}</button>
+              <a routerLink="/patient/patient-list" class="btn btn-warning">
+                  <i class="fas fa-undo"></i> Cancel</a>
+          </form>
+
+
+      </div>
+  </div>
+</div>

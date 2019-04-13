@@ -1,30 +1,41 @@
-<div class="button-row">
-  <a mat-fab color="primary" [routerLink]="['/patients']"><mat-icon>list</mat-icon></a>
+<div class="container">
+  <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+          <h1>Patient List</h1>
+          <a class="btn btn-primary" routerLink="add" role="button">
+          <i class="fas fa-plus-circle"></i> Add a patient</a>
+          <br>
+          <table class="table table-bordered table-striped table-hover">
+              <!-- Header Row-->
+              <tr>
+                <th class="text-center">Patient Number</th>
+                  <th class="text-center">First Name</th>
+                  <th class="text-center">Last Name</th>
+                  <th class="text-center">Age</th>
+                  <th class="text-center">Allergies</th>
+                  <th class="text-center"></th>
+                  <th class="text-center"></th>
+              </tr>
+
+              <!-- Repeatable Template Row -->
+                  <tr *ngFor="let patient of patients">
+                      <td class="text-center">{{patient.patientNumber}}</td>
+                      <td class="text-center">{{patient.firstName}}</td>
+                      <td class="text-center">{{patient.lastName}}</td>
+                      <td class="text-center">{{patient.age}}</td>
+                      <td class="text-center">{{patient.allergies}}</td>
+                      <td class="text-center">
+                      <a routerLink="edit/{{patient.patientNumber}}"
+                          class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Edit</a>
+                      </td>
+
+                      <td class="text-center">
+                              <a routerLink="delete/{{patient.patientNumber}}" (click)="onDeleteClick()"
+                                  class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
+                              </td>
+                  </tr>
+          </table>
+
+      </div>
+  </div>
 </div>
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title><h2>{{patients.patientNumber}}</h2></mat-card-title>
-    <mat-card-subtitle>{{patients.firstName}}</mat-card-subtitle>
-    <mat-card-subtitle>{{patients.lastName}}</mat-card-subtitle>
-    <mat-card-subtitle>{{patients.age}}</mat-card-subtitle>
-    <mat-card-subtitle>{{patients.allergies}}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <dl>
-      <dt>Patient Number:</dt>
-      <dd>{{patients.patientNumber}}</dd>
-      <dt>First Name:</dt>
-      <dd>{{patients.firstName}}</dd>
-      <dt>Last Name:</dt>
-      <dd>{{patients.lastName}}</dd>
-      <dt>Age:</dt>
-      <dd>{{patients.age}}</dd>
-      <dt>Allergies:</dt>
-      <dd>{{patients.allergies}}</dd>
-    </dl>
-  </mat-card-content>
-  <mat-card-actions>
-    <a mat-fab color="primary" [routerLink]="['/patients-edit', patients.key]" class="edit-btn"><mat-icon>edit</mat-icon></a>
-    <a mat-fab color="warn" (click)="deletePatients(patients.key)"><mat-icon>delete</mat-icon></a>
-  </mat-card-actions>
-</mat-card>
