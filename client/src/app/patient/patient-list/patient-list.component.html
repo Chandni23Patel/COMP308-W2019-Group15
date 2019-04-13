@@ -1,3 +1,30 @@
-<p>
-  patient-list works!
-</p>
+<div class="button-row">
+  <a mat-fab color="primary" [routerLink]="['/patients']"><mat-icon>list</mat-icon></a>
+</div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title><h2>{{patients.patientNumber}}</h2></mat-card-title>
+    <mat-card-subtitle>{{patients.firstName}}</mat-card-subtitle>
+    <mat-card-subtitle>{{patients.lastName}}</mat-card-subtitle>
+    <mat-card-subtitle>{{patients.age}}</mat-card-subtitle>
+    <mat-card-subtitle>{{patients.allergies}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <dl>
+      <dt>Patient Number:</dt>
+      <dd>{{patients.patientNumber}}</dd>
+      <dt>First Name:</dt>
+      <dd>{{patients.firstName}}</dd>
+      <dt>Last Name:</dt>
+      <dd>{{patients.lastName}}</dd>
+      <dt>Age:</dt>
+      <dd>{{patients.age}}</dd>
+      <dt>Allergies:</dt>
+      <dd>{{patients.allergies}}</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-fab color="primary" [routerLink]="['/patients-edit', patients.key]" class="edit-btn"><mat-icon>edit</mat-icon></a>
+    <a mat-fab color="warn" (click)="deletePatients(patients.key)"><mat-icon>delete</mat-icon></a>
+  </mat-card-actions>
+</mat-card>
