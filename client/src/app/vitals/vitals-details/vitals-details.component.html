@@ -1,3 +1,60 @@
-<p>
-  vitals-detail will be added
-</p>
+<!-- Content for the Edit Page -->
+<div class="container">
+  <div class="row">
+      <div class="col-md-offset-5 col-md-6">
+          <h1>{{ title }}</h1>
+
+          <form class="form" (submit)="onVitalsDetailsSubmit()">
+
+              <div class="form-group">
+                  <label for="HeartRateTextField">Heart Rate</label>
+                  <input type="text" class="form-control"
+                  id="HeartRateTextField"
+                  placeholder="Enter Heart Rate"
+                  name="heartrate"
+                  [(ngModel)]="vitals.heartrate"
+                  value="{{ vitals.heartrate }}"
+                  required>
+              </div>
+
+            <div class="form-group">
+              <label for="TempratureTextField">Temprature</label>
+              <input type="text" class="form-control"
+              id="TempratureTextField"
+              placeholder="Enter Body Temprature"
+              name="bodytemprature"
+              [(ngModel)]="vitals.bodytemprature"
+              value="{{ vitals.bodytemprature }}"
+              required>
+            </div>
+
+            <div class="form-group">
+              <label for="PressureTextField">Blood Pressure</label>
+              <input type="text" class="form-control"
+              id="PressureTextField"
+              placeholder="Enter Body Temprature"
+              name="bodypressure"
+              [(ngModel)]="vitals.bodypressure"
+              value="{{ vitals.bodypressure }}"
+              required>
+            </div>
+
+            <div class="form-group">
+                <label for="RateTextField">Breathing Rate</label>
+                <input type="number" class="form-control"
+                id="RateTextField"
+                placeholder="Enter Breathning Rate"
+                name="rate"
+                [(ngModel)]="vitals.breathingrate"
+                value="{{ vitals.breathingrate}}"
+                required>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+              <i class="fas fa-edit"></i> {{ title }}</button>
+              <a routerLink="/vital/vital-list" class="btn btn-warning">
+                  <i class="fas fa-undo"></i> Cancel</a>
+          </form>
+      </div>
+  </div>
+</div>

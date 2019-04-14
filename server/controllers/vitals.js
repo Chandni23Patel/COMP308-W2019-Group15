@@ -36,8 +36,9 @@ module.exports.processAddPage = (req, res, next) => {
             res.end(err);
         }
         else {
+            console.log(req.body.heartrate);
             console.log(newVitals);
-            res.json({success: true, msg: 'Successfully Added New Contact'});
+            res.json({success: true, msg: 'Vitals Added'});
         }
     });
 }
@@ -52,7 +53,7 @@ module.exports.displayEditPage = (req, res, next) => {
         }
         else
         {
-            res.json({success: true, msg: 'Successfully Displayed Contact to Edit', contact: contactObject});
+            res.json({success: true, msg: 'Successfully Displayed Vital to Edit', vitals: vitalsObject});
         }
     });
 }
@@ -74,7 +75,7 @@ module.exports.processEditPage = (req, res, next) => {
             res.end(err);
         }
         else {
-            res.json({success: true, msg: 'Successfully Edited Contact', contact: updatedContact});
+            res.json({success: true, msg: 'Vitals are updated', vitals: updatedVitals});
         }
     })
 }
@@ -88,7 +89,7 @@ module.exports.performDelete = (req, res, next) => {
             res.end(err);
         }
         else {
-           res.json({success: true, msg: 'Successfully Deleted Contact'});
+           res.json({success: true, msg: 'Successfully Delete'});
         }
     });
 }

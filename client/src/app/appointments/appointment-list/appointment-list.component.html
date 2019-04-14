@@ -1,7 +1,7 @@
 <div class="container">
         <div class="row ">
             <div class="col-md-offset-2 col-md-8">
-                <h1>{{title}}</h1>
+                <h1> Add Appointment </h1>
                 <a class="btn btn-primary" routerLink="add" role="button">
                     <i class="fas fa-plus-circle"></i> Add Appointments
                 </a>
@@ -21,7 +21,7 @@
                         <th class="text-center">Cancel</th>
                     </tr>
 
-                   
+
                         <tr *ngFor="let appointment of appointments">
                             <td class="text-center">{{appointment.patientNumber}}</td>
                             <td class="text-center">{{appointment.username}}</td>

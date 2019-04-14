@@ -35,6 +35,7 @@ let contactRouter = require('../routes/contact');
 let patientRouter = require('../routes/patient');
 let medicineRouter = require('../routes/medicine');
 let appointmentRouter = require('../routes/appointment');
+let vitalsRouter = require('../routes/vitals');
 
 let app = express();
 
@@ -101,6 +102,7 @@ app.use('/api/contact-list', passport.authenticate('jwt', {session: false}), con
 app.use('/api/patient-list', passport.authenticate('jwt', {session: false}), patientRouter);
 app.use('/api/medicine-list', passport.authenticate('jwt', {session: false}), medicineRouter);
 app.use('/api/appointment', passport.authenticate('jwt', {session: false}), appointmentRouter);
+app.use('/api/vital-list', passport.authenticate('jwt', {session: false}), vitalsRouter);
 app.get('*', (req, res) => {
   res.sendfile(path.join(__dirname, '../../public/index.html'));
 });
