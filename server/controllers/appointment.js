@@ -53,9 +53,9 @@ module.exports.processAddPage = (req, res, next) => {
             res.end(err);
         }
         else {
-            console.log(newAppointment.patientNumber);
-            console.log(newAppointment.date);
-            console.log(newAppointment.time);
+            //console.log(newAppointment.patientNumber);
+            //console.log(newAppointment.date);
+            //console.log(newAppointment.time);
             res.json({success: true, msg: 'Successfully Displayed Add Page'});
         }
     });
@@ -88,11 +88,8 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             // show the edit view
-            res.render('appointments/edit', {
-                title: 'Edit Appointment',
-                editAppointment: editAppointment,
-                displayName: req.user ? req.user.displayName : ""
-            });
+            res.json({success: true, msg: 'Successfully Displayed Patient to Edit', appointment: editAppointment});
+
         }
     });
 }
@@ -101,8 +98,8 @@ module.exports.processEditPage = (req, res, next) => {
 
     let editAppointment = appointmentModel({
         "_id": id,
-        "date": (req.body.appointmentDate).toLocaleString(),
-        "time": (req.body.appointmentTime).toLocaleString()
+        "date": req.body.date,
+        "time": req.body.time
     });
     
     appointmentModel.update({_id: id}, editAppointment, (err) => {
@@ -111,8 +108,10 @@ module.exports.processEditPage = (req, res, next) => {
             res.end(err);
         }
         else {
+            res.json({success: true, msg: 'Successfully Displayed Add Page', appointment: editAppointment});
+
             // refresh the contact list
-            res.redirect('/appointment/list');
+            //res.redirect('/appointment/list');
         }
     });
 }
@@ -127,7 +126,8 @@ module.exports.processDeletePage = (req, res, next) => {
         }
         else {
             // refresh the contact list
-            res.redirect('/appointment/list');
+            res.json({success: true, msg: 'Successfully Deleted Patient'});
+git             //res.redirect('/appointment/list');
         }
     });
 }

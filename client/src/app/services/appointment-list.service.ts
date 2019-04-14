@@ -54,7 +54,7 @@ export class AppointmentListService {
     return this.http.post<any>(this.endpoint + 'edit/' + appointment._id, appointment, this.httpOptions);
   }
 
-  public deleteContact(appointment: Appointment): Observable<any> {
+  public deleteAppointment(appointment: Appointment): Observable<any> {
     this.loadToken();
     this.httpOptions.headers = this.httpOptions.headers.set('Authorization', this.authToken);
     return this.http.get<any>(this.endpoint + 'delete/' + appointment._id, this.httpOptions);
