@@ -41,6 +41,9 @@ import { VitalsDeleteComponent } from './vitals/vitals-delete/vitals-delete.comp
 import { PatienthistoryDeleteComponent } from './patienthistory/patienthistory-delete/patienthistory-delete.component';
 import { PatienthistoryDetailsComponent } from './patienthistory/patienthistory-details/patienthistory-details.component';
 import { PatienthistoryListComponent } from './patienthistory/patienthistory-list/patienthistory-list.component';
+import { AppointmentEditComponent } from './appointments/appointment-edit/appointment-edit.component';
+import { AppointmentDeleteComponent } from './appointments/appointment-delete/appointment-delete.component';
+import { AppointmentListComponent } from './appointments/appointment-list/appointment-list.component';
 
 export function jwtTokenGetter() {
   return localStorage.getItem('id_token');
@@ -74,7 +77,10 @@ export function jwtTokenGetter() {
     VitalsDeleteComponent,
     PatienthistoryDeleteComponent,
     PatienthistoryDetailsComponent,
-    PatienthistoryListComponent
+    PatienthistoryListComponent,
+    AppointmentEditComponent,
+    AppointmentDeleteComponent,
+    AppointmentListComponent
   ],
   imports: [
     BrowserModule,

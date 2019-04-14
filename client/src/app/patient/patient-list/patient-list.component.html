@@ -4,7 +4,7 @@
           <h1>Patient List</h1>
           <a class="btn btn-primary" routerLink="add" role="button">
           <i class="fas fa-plus-circle"></i> Add a patient</a>
-          <br>
+            <br>
           <table class="table table-bordered table-striped table-hover">
               <!-- Header Row-->
               <tr>
@@ -25,12 +25,12 @@
                       <td class="text-center">{{patient.age}}</td>
                       <td class="text-center">{{patient.allergies}}</td>
                       <td class="text-center">
-                      <a routerLink="edit/{{patient._id}}"
+                        <a routerLink="edit/{{patient._id}}"
                           class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Edit</a>
                       </td>
 
                       <td class="text-center">
-                              <a routerLink="delete/{{patient._id}}" (click)="onDeleteClick()"
+                        <a routerLink="delete/{{patient._id}}" (click)="onDeleteClick()"
                                   class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
                               </td>
                   </tr>

@@ -1,0 +1,44 @@
+<div class="container">
+        <div class="row ">
+            <div class="col-md-offset-2 col-md-8">
+                <h1>{{title}}</h1>
+                <a class="btn btn-primary" routerLink="add" role="button">
+                    <i class="fas fa-plus-circle"></i> Add Appointments
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <table class="table table-bordered table-striped table-hover">
+                    <!-- Header Row-->
+                    <tr>
+                        <th class="text-center">Patient Number</th>
+                        <th class="text-center">Doctor</th>
+                        <th class="text-center">Appointment Time</th>
+                        <th class="text-center">Appointment Date</th>
+                        <th class="text-center">Created On</th>
+                        <th class="text-center">Reschedule</th>
+                        <th class="text-center">Cancel</th>
+                    </tr>
+
+                   
+                        <tr *ngFor="let appointment of appointments">
+                            <td class="text-center">{{appointment.patientNumber}}</td>
+                            <td class="text-center">{{appointment.username}}</td>
+                            <td class="text-center">{{appointment.time}}</td>
+                            <td class="text-center">{{appointment.date}}</td>
+                            <td class="text-center">{{appointment.updatedOn}}</td>
+                            <td class="text-center">
+                                <a routerLink="edit/{{appointment._id}}"
+                                class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Reschedule</a>
+                            </td>
+
+                            <td class="text-center">
+                                <a routerLink="delete/{{appointment._id}}"
+                                class="btn btn-danger"><i class="fas fa-trash-alt"></i> Cancel</a>
+                            </td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+    </div>

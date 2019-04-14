@@ -29,6 +29,6 @@ router.post('/edit/:id', passport.authenticate('jwt', {session: false}), appoint
 
 router.get('/delete/:id', passport.authenticate('jwt', {session: false}), appointmentController.processDeletePage);
 
-router.get('/list', passport.authenticate('jwt', {session: false}), appointmentController.displayAppointments);
+router.get('/appointment-list', passport.authenticate('jwt', {session: false}), appointmentController.displayAppointments);
 
 module.exports = router;

@@ -34,6 +34,7 @@ let indexRouter = require('../routes/index');
 let contactRouter = require('../routes/contact');
 let patientRouter = require('../routes/patient');
 let medicineRouter = require('../routes/medicine');
+let appointmentRouter = require('../routes/appointment');
 
 let app = express();
 
@@ -99,6 +100,7 @@ app.use('/api', indexRouter);
 app.use('/api/contact-list', passport.authenticate('jwt', {session: false}), contactRouter); // TODO -> add security
 app.use('/api/patient-list', passport.authenticate('jwt', {session: false}), patientRouter);
 app.use('/api/medicine-list', passport.authenticate('jwt', {session: false}), medicineRouter);
+app.use('/api/appointment', passport.authenticate('jwt', {session: false}), appointmentRouter);
 app.get('*', (req, res) => {
   res.sendfile(path.join(__dirname, '../../public/index.html'));
 });

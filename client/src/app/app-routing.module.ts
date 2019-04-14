@@ -21,6 +21,9 @@ import { VitalsDeleteComponent } from './vitals/vitals-delete/vitals-delete.comp
 import { PatientListComponent } from './patient/patient-list/patient-list.component';
 import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
 import { PatientDeleteComponent } from './patient/patient-delete/patient-delete.component';
+import { AppointmentListComponent } from './appointments/appointment-list/appointment-list.component';
+import { AppointmentEditComponent } from './appointments/appointment-edit/appointment-edit.component';
+import { AppointmentDeleteComponent } from './appointments/appointment-delete/appointment-delete.component';
 import { MedicineListComponent } from './medicine/medicine-list/medicine-list.component';
 import { MedicineDeleteComponent } from './medicine/medicine-delete/medicine-delete.component';
 import { MedicineDetailsComponent } from './medicine/medicine-details/medicine-details.component';
@@ -45,6 +48,13 @@ const routes: Routes = [
   {path: 'patient/patient-list/add', component: PatientDetailsComponent, data: {title: 'Add Patient'}, canActivate: [AuthGuard]},
   {path: 'patient/patient-list/edit/:id', component: PatientDetailsComponent, data: {title: 'Edit Patient'}, canActivate: [AuthGuard]},
   {path: 'patient/patient-list/delete/:id', component: PatientDeleteComponent, data: {title: 'Delete Patient'}, canActivate: [AuthGuard]},
+
+//appointments path
+  {path: 'appointment/appointment-list', component: AppointmentListComponent, data: {title: 'Appointment List'}, canActivate: [AuthGuard]},
+  {path: 'appointment/appointment-list/add', component: AppointmentEditComponent, data: {title: 'Add Appointment'}, canActivate: [AuthGuard]},
+  {path: 'appointment/appointment-list/edit/:id', component: AppointmentEditComponent, data: {title: 'Edit Appointment'}, canActivate: [AuthGuard]},
+  {path: 'appointment/appointment-list/delete/:id', component: AppointmentDeleteComponent, data: {title: 'Delete Appointment'}, canActivate: [AuthGuard]},
+
 //patienthistory path
   {path: 'patienthistory/patienthistory-list', component: PatienthistoryListComponent, data: {title: 'Patient History List'}, canActivate: [AuthGuard]},
   {path: 'patienthistory/patienthistory-list/add', component: PatienthistoryDetailsComponent, data: {title: 'Add Patient History'}, canActivate: [AuthGuard]},

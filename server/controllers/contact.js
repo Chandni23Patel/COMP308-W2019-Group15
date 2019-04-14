@@ -34,6 +34,7 @@ module.exports.processAddPage = (req, res, next) => {
             res.end(err);
         }
         else {
+            console.log(newContact);
             res.json({success: true, msg: 'Successfully Added New Contact'});
         }
     });

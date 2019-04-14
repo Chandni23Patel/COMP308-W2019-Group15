@@ -10,29 +10,42 @@ let passport = require("passport");
 // define the User Model
 let userModel = require("../models/user");
 let User = userModel.User; // alias
+/*module.exports.displayAppointmentList = (req, res, next) =>{
+    appointmentModel.find((err, appointmentList) => {
+        if(err) {
+            return console.error(err);
+        }
+        else {
+            res.json({success: true, patientList: patientList, user: req.user});
+        }
+    });
+}*/
 
 module.exports.displayAddPage = (req, res, next) => {
-    let patientsNumber= contactModel.find({}, 'patientNumber', function(err, patientsNumber){
+    /*let patientsNumber= contactModel.find({}, 'patientNumber', function(err, patientsNumber){
         if(err){ return next(err);}
         else{
             res.render('appointments/index', {
                 title: 'Add appointments',
-                patientsNumber: patientsNumber,
+                //patientsNumber: patientsNumber,
                 displayName: req.user ? req.user.displayName : ""
             });
         }
-    });
+    });*/
+   res.json({success: true, msg: 'Successfully Displayed Add Page'});
+
     //return patientsNumber;
 }
 
 module.exports.processAddPage = (req, res, next) => {
+    //let displayName= req.user ? req.user.displayName : "";
 
     let newAppointment = appointmentModel({
         "patientNumber": req.body.patientNumber,
         "username": req.user.displayName,
-        "date": (req.body.appointmentDate).toLocaleString(),
-        "time": (req.body.appointmentTime).toLocaleString(),
-        "updatedOn": new Date(Date.now()).toLocaleString()
+        "date": req.body.date,
+        "time": req.body.time,
+        "updatedOn": new Date(Date.now())
     });
     appointmentModel.create(newAppointment, (err, appointmentModel) => {
         if(err) {
@@ -40,25 +53,26 @@ module.exports.processAddPage = (req, res, next) => {
             res.end(err);
         }
         else {
-            res.redirect('/appointment/list');
+            console.log(newAppointment.patientNumber);
+            console.log(newAppointment.date);
+            console.log(newAppointment.time);
+            res.json({success: true, msg: 'Successfully Displayed Add Page'});
         }
     });
 }
 
 module.exports.displayAppointments = (req, res, next) => {
-    let displayName= req.user ? req.user.displayName : "";
-    appointmentModel.find({ username: displayName } ,(err, appointmentsList) => {
+    console.log("inside display node");
+    //let displayName= req.user ? req.user.displayName : "";
+    appointmentModel.find((err, appointmentsList) => {
         if(err) {
             return console.error(err);
         }
         else {
            // console.log(contactList);
 
-            res.render('appointments/list', {
-                title: 'Appointment List',
-                appointmentsList: appointmentsList,
-                displayName: displayName
-            });
+           res.json({success: true, appointments: appointmentsList, user: req.user});
+
             
         }
     });
