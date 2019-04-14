@@ -25,8 +25,7 @@ export class MedicineDeleteComponent implements OnInit {
 
   ngOnIn
   ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }it() {
+
     this.title = this.activateRoute.snapshot.data.title;
     this.medicine = new Medicine();
 

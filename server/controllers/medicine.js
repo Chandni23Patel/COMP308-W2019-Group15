@@ -23,9 +23,9 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
 
     let newMedicine = medicineModel({
-        "firstName": req.body.firstName,
-        "lastName": req.body.lastName,
-        "age": req.body.age
+        "medicineName": req.body.medicineName,
+        "type": req.body.type,
+        "description": req.body.description
     });
 
     medicineModel.create(newMedicine, (err, medicineModel) => {
