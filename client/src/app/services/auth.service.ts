@@ -12,7 +12,7 @@ export class AuthService {
   public user: User;
   private authToken: any;
 
-  private endpoint = 'https://dashboard.heroku.com/group15-project/api/';
+  private endpoint = 'https://group15-project.herokuapp.com/api/';
 
   //private endpoint = 'http://localhost:3000/api/';
 

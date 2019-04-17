@@ -13,9 +13,7 @@ export class AppointmentListService {
   private appointment: Appointment;
   private authToken: any = null;
 
-  //private endpoint = 'https://comp308-w2019-lesson10a.herokuapp.com/api/appoinment/';
-
-  private endpoint = 'https://dashboard.heroku.com/group15-project/api/appoinment';
+  private endpoint = 'https://group15-project.herokuapp.com/api/appoinment';
 
   //private endpoint = 'http://localhost:3000/api/appointment/';
 

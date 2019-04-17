@@ -14,7 +14,7 @@ export class MedicineListService {
 
   //private endpoint = 'https://comp308-w2019-lesson10a.herokuapp.com/api/medicine-list/';
 
-  private endpoint = 'https://dashboard.heroku.com/group15-project/api/medicine-list';
+  private endpoint = 'https://group15-project.herokuapp.com/api/medicine-list';
 
  // private endpoint = 'http://localhost:3000/api/medicine-list/';
 
