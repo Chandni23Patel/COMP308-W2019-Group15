@@ -12,9 +12,9 @@ export class VitalsListService {
   private user: User;
   private authToken: any = null;
 
-  private endpoint = 'https://group15-project.herokuapp.com/api/vital-list/';
+  //private endpoint = 'https://group15-project.herokuapp.com/api/vital-list/';
 
- //private endpoint = 'http://localhost:3000/api/vital-list/';
+ private endpoint = 'http://localhost:3000/api/vital-list/';
 
  private httpOptions = {
    headers: new HttpHeaders({

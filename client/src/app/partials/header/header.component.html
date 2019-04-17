@@ -24,6 +24,7 @@
         <a class="nav-link" routerLink="about"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           ><i class="fa fa-lg fa-user"></i> About</a>
       </li>
+    <!--
       <li class="nav-item">
         <a class="nav-link" routerLink="products"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           ><i class="fa fa-lg fa-briefcase"></i> Products</a>
@@ -32,6 +33,7 @@
         <a class="nav-link" routerLink="services"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           ><i class="fa fa-lg fa-wrench"></i> Services</a>
       </li>
+     -->
       <li class="nav-item">
         <a class="nav-link" routerLink="patient"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           ><i class="fa fa-lg fa-users"></i> Patient</a>
@@ -42,10 +44,12 @@
           ><i class="fa fa-lg fa-user"></i> Appointments</a>
       </li>
 
+      <!--
       <li class="nav-item">
         <a class="nav-link" routerLink="patienthistory"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           ><i class="fa fa-lg fa-history"></i> Patient History</a>
       </li>
+      -->
 
       <li class="nav-item">
         <a class="nav-link" routerLink="medicine"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
@@ -53,15 +57,15 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink="vitals"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        <a class="nav-link" routerLink="vital"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           ><i class="fa fa-lg fa-heartbeat"></i> Vitals </a>
       </li>
-
+      <!--
       <li class="nav-item">
         <a class="nav-link" routerLink="contact"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           ><i class="fa fa-lg fa-phone"></i> Contact</a>
       </li>
-
+      -->
 
         <li *ngIf="isLoggedIn()" class="navbar-text text-danger ml-5 mr-5 d-none d-lg-inline"><i class="fas fa-lg fa-user"></i>
           Welcome, {{ user.displayName }}</li>

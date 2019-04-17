@@ -13,9 +13,9 @@ export class AppointmentListService {
   private appointment: Appointment;
   private authToken: any = null;
 
-  private endpoint = 'https://group15-project.herokuapp.com/api/appoinment/';
+  //private endpoint = 'https://group15-project.herokuapp.com/api/appoinment-list/';
 
-  //private endpoint = 'http://localhost:3000/api/appointment/';
+  private endpoint = 'http://localhost:3000/api/appointment/';
 
   private httpOptions = {
     headers: new HttpHeaders({

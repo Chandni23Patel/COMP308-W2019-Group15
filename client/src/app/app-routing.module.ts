@@ -8,6 +8,10 @@ import { AboutComponent } from './pages/about/about.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { VitalComponent } from './pages/vital/vital.component';
+import { PatientComponent } from './pages/patient/patient.component';
+import { MedicineComponent } from './pages/medicine/medicine.component';
+import { AppointmentComponent } from './pages/appointment/appointment.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
 import { ContactDetailsComponent } from './contacts/contact-details/contact-details.component';
@@ -38,6 +42,10 @@ const routes: Routes = [
   {path: 'products', component: ProductsComponent, data: {title: 'Products'}},
   {path: 'services', component: ServicesComponent, data: {title: 'Services'}},
   {path: 'contact', component: ContactComponent, data: {title: 'Contact'}},
+  {path: 'vital', component: VitalComponent, data: {title: 'Vitals'}},
+  {path: 'patient', component: PatientComponent, data: {title: 'Patients'}},
+  {path: 'medicine', component: MedicineComponent, data: {title: 'Medicine'}},
+  {path: 'appointment', component: AppointmentComponent, data: {title: 'Appointment'}},
 //contact path
   {path: 'contact/contact-list', component: ContactListComponent, data: {title: 'Contact List'}, canActivate: [AuthGuard]},
   {path: 'contact/contact-list/add', component: ContactDetailsComponent, data: {title: 'Add Contact'}, canActivate: [AuthGuard]},
