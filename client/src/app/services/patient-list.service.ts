@@ -12,7 +12,7 @@ export class PatientListService {
   private user: User;
   private authToken: any = null;
 
-  private endpoint = 'https://group15-project.herokuapp.com/api/patient-list';
+  private endpoint = 'https://group15-project.herokuapp.com/api/patient-list/';
 
   //private endpoint = 'http://localhost:3000/api/patient-list/';
 
