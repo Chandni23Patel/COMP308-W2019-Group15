@@ -12,7 +12,7 @@ export class ContactListService {
   private user: User;
   private authToken: any = null;
 
-  private endpoint = 'https://dashboard.heroku.com/apps/group15-project/api/contact-list/';
+  private endpoint = 'https://dashboard.heroku.com/group15-project/api/contact-list/';
 
   //private endpoint = 'https://comp308-w2019-lesson10a.herokuapp.com/api/';
 
