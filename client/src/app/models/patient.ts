@@ -6,5 +6,7 @@ export class Patient {
   lastName: string;
   age: number;
   allergies: string;
+  weight: string;
+  height: string;
 
 }
