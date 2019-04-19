@@ -7,8 +7,8 @@ let patientSchema = mongoose.Schema({
     lastName: String,
     age: Number,
     allergies: String,
-    Height: String,
-    Weight: String
+    height: String,
+    weight: String
 
 },
 {

@@ -28,8 +28,8 @@ module.exports.processAddPage = (req, res, next) => {
         "lastName": req.body.lastName,
         "age": req.body.age,
         "allergies":req.body.allergies,
-        "Height":req.body.height,
-        "Weight":req.body.weight
+        "height":req.body.height,
+        "weight":req.body.weight
     });
 
     patientModel.create(newPatient, (err, patientModel) => {
@@ -68,8 +68,8 @@ module.exports.processEditPage = (req, res, next) => {
         "lastName": req.body.lastName,
         "age": req.body.age,
         "allergies":req.body.allergies,
-        "Height":req.body.height,
-        "Weight":req.body.weight
+        "height":req.body.height,
+        "weight":req.body.weight
     });
 
     patientModel.update({_id: id}, updatedPatient, (err) => {
