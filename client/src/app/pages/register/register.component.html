@@ -69,10 +69,12 @@
                             </td>
                             <td>
 
-                          <input type="role" class="form-control"
-                          [(ngModel)]="user.role"
-                          name="role" placeholder="Enter Role"
-                          id="role" required autocomplete="off">
+                                <select class="form-control" id="role"
+                                name="role" required>
+                                    <% for(let count = 0; count < role.length; count++) { %>
+                                        <option value="<%= role[count].role %>"><%= role[count].role %></option>
+                                    <% } %>
+                                </select>
                             </td>
                           </tr>
 
