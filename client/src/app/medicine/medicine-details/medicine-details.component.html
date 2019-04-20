@@ -5,19 +5,33 @@
             <h1>{{ title }}</h1>
 
             <form class="form" (submit)="onMedicineDetailsSubmit()">
-                <div class="form-group">
-                    <label for="MedicineNameTextField">Medicine Name</label>
-                    <input type="text" class="form-control"
-                    id="MedicineNameTextField"
-                    placeholder="Enter Medicine Name"
-                    name="medicineName"
-                    [(ngModel)]="medicine.medicineName"
-                    value="{{ medicine.medicineName }}"
-                    required>
-                </div>
 
-                <div class="form-group">
-                  <label for="TypeTextField">Type</label>
+
+                <table class="table">
+                    <tr>
+                      <td>
+                          <label for="MedicineNameTextField">Medicine Name</label>
+                      </td>
+                      <td>
+
+                           <input type="text" class="form-control"
+                            id="MedicineNameTextField"
+                             placeholder="Enter Medicine Name"
+                            name="medicineName"
+                             [(ngModel)]="medicine.medicineName"
+                             value="{{ medicine.medicineName }}"
+                             required>
+                  </td>
+                </tr>
+
+                <tr>
+                <td>
+                    <label for="TypeTextField">Type</label>
+                </td>
+
+                <td>
+
+
                   <input type="text" class="form-control"
                   id="TypeTextField"
                   placeholder="Enter Type"
@@ -25,10 +39,19 @@
                   [(ngModel)]="medicine.type"
                   value="{{ medicine.type }}"
                   required>
-              </div>
 
-                <div class="form-group">
-                    <label for="DescriptionTextField">Description</label>
+
+                </td>
+              </tr>
+
+              <tr>
+              <td>
+                  <label for="DescriptionTextField">Description</label>
+              </td>
+
+              <td>
+
+
                     <input type="text" class="form-control"
                     id="DescriptionTextField"
                     placeholder="Enter Description"
@@ -36,12 +59,24 @@
                     [(ngModel)]="medicine.description"
                     value="{{ medicine.description }}"
                     required>
-                </div>
+              </td>
+              </tr>
 
-                <button type="submit" class="btn btn-primary">
-                <i class="fas fa-edit"></i> {{ title }}</button>
-                <a routerLink="/medicine/medicine-list" class="btn btn-warning">
+              <tr>
+                <td>
+                <button type="submit" class="btn btn-outline-success">
+                <i class="fas fa-plus"></i> {{ title }}</button>
+                </td>
+
+
+                <td>
+                <a routerLink="/medicine/medicine-list" class="btn btn-outline-warning">
                     <i class="fas fa-undo"></i> Cancel</a>
+                </td>
+
+             </tr>
+
+             </table>
             </form>
 
 

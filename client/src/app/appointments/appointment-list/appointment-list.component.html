@@ -2,8 +2,8 @@
         <div class="row ">
             <div class="col-md-offset-2 col-md-8">
                 <h1> Add Appointment </h1>
-                <a class="btn btn-primary" routerLink="add" role="button">
-                    <i class="fas fa-plus-circle"></i> Add Appointments
+                <a class="btn btn-outline-primary" routerLink="add" role="button">
+                    <i class="fas fa-plus"></i> Add Appointments
                 </a>
             </div>
         </div>
@@ -30,12 +30,12 @@
                             <td class="text-center">{{appointment.updatedOn}}</td>
                             <td class="text-center">
                                 <a routerLink="edit/{{appointment._id}}"
-                                class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Reschedule</a>
+                                class="btn btn-outline-primary"><i class="fas fa-pencil-alt"></i> Reschedule</a>
                             </td>
 
                             <td class="text-center">
                                 <a routerLink="delete/{{appointment._id}}"
-                                class="btn btn-danger"><i class="fas fa-trash-alt"></i> Cancel</a>
+                                class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Cancel</a>
                             </td>
                         </tr>
                 </table>

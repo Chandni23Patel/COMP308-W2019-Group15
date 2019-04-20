@@ -6,8 +6,16 @@
 
           <form class="form" (submit)="onVitalsDetailsSubmit()">
 
-              <div class="form-group">
-                  <label for="HeartRateTextField">Heart Rate</label>
+
+              <table class="table">
+                  <tr>
+                    <td>
+                        <label for="HeartRateTextField">Heart Rate</label>
+                    </td>
+                    <td>
+
+
+
                   <input type="text" class="form-control"
                   id="HeartRateTextField"
                   placeholder="Enter Heart Rate"
@@ -15,10 +23,19 @@
                   [(ngModel)]="vitals.heartrate"
                   value="{{ vitals.heartrate }}"
                   required>
-              </div>
 
-            <div class="form-group">
-              <label for="TempratureTextField">Temprature</label>
+
+                </td>
+              </tr>
+
+              <tr>
+              <td>
+                  <label for="TempratureTextField">Temprature</label>
+              </td>
+
+              <td>
+
+
               <input type="text" class="form-control"
               id="TempratureTextField"
               placeholder="Enter Body Temprature"
@@ -26,10 +43,18 @@
               [(ngModel)]="vitals.bodytemprature"
               value="{{ vitals.bodytemprature }}"
               required>
-            </div>
 
-            <div class="form-group">
+            </td>
+          </tr>
+
+          <tr>
+          <td>
               <label for="PressureTextField">Blood Pressure</label>
+          </td>
+
+          <td>
+
+
               <input type="text" class="form-control"
               id="PressureTextField"
               placeholder="Enter Body Temprature"
@@ -37,10 +62,18 @@
               [(ngModel)]="vitals.bodypressure"
               value="{{ vitals.bodypressure }}"
               required>
-            </div>
 
-            <div class="form-group">
-                <label for="RateTextField">Breathing Rate</label>
+            </td>
+          </tr>
+
+          <tr>
+          <td>
+              <label for="RateTextField">Breathing Rate</label>
+          </td>
+
+          <td>
+
+
                 <input type="number" class="form-control"
                 id="RateTextField"
                 placeholder="Enter Breathning Rate"
@@ -48,12 +81,23 @@
                 [(ngModel)]="vitals.breathingrate"
                 value="{{ vitals.breathingrate}}"
                 required>
-              </div>
 
-              <button type="submit" class="btn btn-primary">
-              <i class="fas fa-edit"></i> {{ title }}</button>
-              <a routerLink="/vital/vital-list" class="btn btn-warning">
+              </td>
+            </tr>
+
+
+            <tr>
+              <td>
+              <button type="submit" class="btn btn-outline-success">
+              <i class="fas fa-plus"></i> {{ title }}</button>
+            </td>
+            <td>
+              <a routerLink="/vital/vital-list" class="btn btn-outline-warning">
                   <i class="fas fa-undo"></i> Cancel</a>
+                </td>
+
+                  </tr>
+                    </table>
           </form>
       </div>
   </div>

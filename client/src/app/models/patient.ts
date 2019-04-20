@@ -8,5 +8,7 @@ export class Patient {
   allergies: string;
   weight: string;
   height: string;
+  addedOn: string;
+  password: string
 
 }

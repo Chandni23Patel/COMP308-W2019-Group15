@@ -29,7 +29,9 @@ module.exports.processAddPage = (req, res, next) => {
         "age": req.body.age,
         "allergies":req.body.allergies,
         "height":req.body.height,
-        "weight":req.body.weight
+        "weight":req.body.weight,
+        "addedOn": new Date(Date.now()),
+        "password": req.body.firstName
     });
 
     patientModel.create(newPatient, (err, patientModel) => {
@@ -69,7 +71,9 @@ module.exports.processEditPage = (req, res, next) => {
         "age": req.body.age,
         "allergies":req.body.allergies,
         "height":req.body.height,
-        "weight":req.body.weight
+        "weight":req.body.weight,
+        "addedOn": new Date(Date.now()),
+        "password": req.body.firstName
     });
 
     patientModel.update({_id: id}, updatedPatient, (err) => {
