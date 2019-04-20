@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-  <a class="navbar-brand" routerLink="/"> Health Care </a>
+  <a class="navbar-brand" routerLink="/"><div class="logo-image">
+    <img src="assets/images/hc_logo-01.png" class="img-fluid">
+</div></a>
   <button
     class="navbar-toggler"
     type="button"
@@ -67,7 +69,7 @@
       </li>
       -->
 
-        <li *ngIf="isLoggedIn()" class="navbar-text text-danger ml-5 mr-5 d-none d-lg-inline"><i class="fas fa-lg fa-user"></i>
+        <li *ngIf="isLoggedIn()" class="navbar-text text-dark ml-5 mr-5 d-none d-lg-inline"><i class="fas fa-lg fa-user"></i>
           Welcome, {{ user.displayName }}</li>
 
         <li *ngIf="isLoggedIn()" class="nav-item"><a (click)="onLogoutClick()" routerLink="logout" class="nav-link">
