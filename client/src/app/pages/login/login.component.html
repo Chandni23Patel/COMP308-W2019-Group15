@@ -44,10 +44,14 @@
                       </td>
                       <td>
 
-                    <input type="role" class="form-control"
-                    [(ngModel)]="user.role"
-                    name="role" placeholder="Enter Role"
-                    id="role" required autocomplete="off">
+                          <select class="form-control" id="role"
+                          name="role" required>
+
+                                  <option value="Doctor">Doctor</option>
+                                  <option value="Patient">Patient</option>
+                                  <option value="Nurse">Nurse</option>
+
+                          </select>
                       </td>
                     </tr>
 
