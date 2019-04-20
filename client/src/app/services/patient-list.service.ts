@@ -40,6 +40,10 @@ export class PatientListService {
     return this.http.post<any>(this.endpoint + 'add', patient, this.httpOptions);
   }
 
+  // public registerUser(user: User): Observable<any>  {
+  //   return this.http.post<any>(this.endpoint + 'register', user, this.httpOptions);
+  // }
+
   public getPatient(patient: Patient): Observable<any> {
     this.loadToken();
     this.httpOptions.headers = this.httpOptions.headers.set('Authorization', this.authToken);

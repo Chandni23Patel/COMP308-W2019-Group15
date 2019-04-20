@@ -1,9 +1,12 @@
 let express = require('express');
 let router = express.Router();
 let jwt = require('jsonwebtoken');
+let passport = require("passport");
 
 // create a reference to the db schema
 let patientModel = require('../models/patient');
+let userModel = require('../models/user');
+let User = userModel.User;
 
 module.exports.displayPatientList = (req, res, next) =>{
     patientModel.find((err, patientList) => {
@@ -22,8 +25,11 @@ module.exports.displayAddPage = (req, res, next) => {
 
 module.exports.processAddPage = (req, res, next) => {
 
+    let today = new Date(Date.now());
+    let pNo = today.getFullYear()+""+(today.getMonth()+1)+""+today.getDate()+""+req.body.firstName;
+
     let newPatient = patientModel({
-        "patientNumber": req.body.patientNumber,
+        "patientNumber": pNo,
         "firstName": req.body.firstName,
         "lastName": req.body.lastName,
         "age": req.body.age,
@@ -43,6 +49,27 @@ module.exports.processAddPage = (req, res, next) => {
             res.json({success: true, msg: 'Successfully Added New Patient'});
         }
     });
+
+    // let eId = "eID@gmail.com";
+    // // Add patient to user model for login
+    // let newUser = new User({
+    //     username: pNo,
+    //     //password: req.body.password
+    //     email: eId,
+    //     displayName: req.body.firstName
+    //   });
+    
+    //   User.register(newUser, req.body.password, (err) => {
+    //     if (err) {
+    //       console.log("Error: Inserting New User");
+    //       if (err.name == "UserExistsError") {
+    //         console.log("Error: User Already Exists!");
+    //       }
+    //       return res.json({success: false,  msg: 'ERROR: Failed to Register User.'});
+    //     } else {
+    //       return res.json({success: true, msg: 'User Registered Successfully!'});
+    //     }
+    //   });
 }
 
 module.exports.displayEditPage = (req, res, next) => {

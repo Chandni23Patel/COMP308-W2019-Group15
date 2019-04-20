@@ -54,6 +54,7 @@ const routes: Routes = [
 //patient path
   {path: 'patient/patient-list', component: PatientListComponent, data: {title: 'Patient List'}, canActivate: [AuthGuard]},
   {path: 'patient/patient-list/add', component: PatientDetailsComponent, data: {title: 'Add Patient'}, canActivate: [AuthGuard]},
+  //{path: 'patient/patient-list/register', component: RegisterComponent, data: {title: 'Register'}},
   {path: 'patient/patient-list/edit/:id', component: PatientDetailsComponent, data: {title: 'Edit Patient'}, canActivate: [AuthGuard]},
   {path: 'patient/patient-list/delete/:id', component: PatientDeleteComponent, data: {title: 'Delete Patient'}, canActivate: [AuthGuard]},
 

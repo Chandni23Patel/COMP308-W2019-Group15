@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
 import { Patient } from 'src/app/models/patient';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-patient-details',
@@ -14,6 +15,7 @@ export class PatientDetailsComponent implements OnInit {
 
   title: string;
   patient: Patient;
+  user: User;
 
   constructor(
     private patientListService: PatientListService,
@@ -55,6 +57,16 @@ export class PatientDetailsComponent implements OnInit {
             this.router.navigate(['/patient/patient-list']);
           }
         });
+
+        // this.patientListService.registerUser(this.user).subscribe(data =>{
+        //   if (data.success) {
+        //     this.flashMessage.show(data.msg, {cssClass: 'alert-success', timeOut: 3000});
+        //     this.router.navigate(['/patient/patient-list']);
+        //   } else {
+        //     this.flashMessage.show('Add Patient Failed', {cssClass: 'alert-danger', timeOut: 3000});
+        //     this.router.navigate(['/patient/patient-list']);
+        //   }
+        // })
         break;
       case 'Edit Patient':
         this.patientListService.editPatient(this.patient).subscribe(data => {
