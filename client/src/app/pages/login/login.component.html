@@ -37,6 +37,20 @@
                   id="password" required autocomplete="off">
                   </td>
                   </tr>
+
+                  <tr>
+                      <td>
+                          <label for="role">Role:</label>
+                      </td>
+                      <td>
+
+                    <input type="role" class="form-control"
+                    [(ngModel)]="user.role"
+                    name="role" placeholder="Enter Role"
+                    id="role" required autocomplete="off">
+                      </td>
+                    </tr>
+
                   or
                   <a routerLink="/register">Register Here</a>
 

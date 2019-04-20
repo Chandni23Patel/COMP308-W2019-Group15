@@ -130,9 +130,7 @@ module.exports.processDeletePage = (req, res, next) => {
             res.end(err);
         }
         else {
-            // refresh the contact list
-            res.json({success: true, msg: 'Successfully Deleted Patient'});
-git             //res.redirect('/appointment/list');
+           res.json({success: true, msg: 'Successfully Deleted Patient'});
         }
     });
 }

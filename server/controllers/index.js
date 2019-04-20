@@ -80,7 +80,8 @@ module.exports.processLoginPage = (req, res, next) => {
         id: user._id,
         displayName: user.displayName,
         username: user.username,
-        email: user.email
+        email: user.email,
+        role:user.role
       }
 
       const authToken = jwt.sign(payload, DB.secret, {
@@ -91,7 +92,8 @@ module.exports.processLoginPage = (req, res, next) => {
         id: user._id,
         displayName: user.displayName,
         username: user.username,
-        email: user.email
+        email: user.email,
+        role: user.role
       }, token: authToken});
     });
   })(req, res, next);
@@ -118,7 +120,8 @@ module.exports.processRegisterPage = (req, res, next) => {
     username: req.body.username,
     //password: req.body.password
     email: req.body.email,
-    displayName: req.body.displayName
+    displayName: req.body.displayName,
+    role: req.body.role
   });
 
   User.register(newUser, req.body.password, (err) => {
