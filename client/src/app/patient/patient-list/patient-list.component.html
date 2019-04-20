@@ -5,6 +5,7 @@
           <a class="btn btn-outline-primary" routerLink="add" role="button">
           <i class="fas fa-plus"></i> Add a patient</a>
             <br>
+            <br>
           <table class="table table-bordered table-striped table-hover">
               <!-- Header Row-->
               <tr>
@@ -15,8 +16,6 @@
                   <th class="text-center">Allergies</th>
                   <th class="text-center">Height</th>
                   <th class="text-center">Weight</th>
-                  <th class="text-center">Added On</th>
-                  <th class="text-center">Password</th>
                   <th class="text-center"></th>
                   <th class="text-center"></th>
               </tr>
@@ -30,8 +29,7 @@
                       <td class="text-center">{{patient.allergies}}</td>
                       <td class="text-center">{{patient.height}}</td>
                       <td class="text-center">{{patient.weight}}</td>
-                      <td class="text-center">{{patient.addedOn}}</td>
-                      <td class="text-center">{{patient.password}}</td>
+
 
                       <td class="text-center">
                         <a routerLink="edit/{{patient._id}}"
