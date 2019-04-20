@@ -1,3 +1,9 @@
+/* 
+    Student ID: 300991457
+    Health Care Application
+    Description: Model for Appointment
+*/
+
 let mongoose = require('mongoose');
 
 // create a model class

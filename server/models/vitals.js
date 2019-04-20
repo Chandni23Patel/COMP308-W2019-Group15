@@ -1,3 +1,9 @@
+/* 
+    Student ID: 300990555
+    Health Care Application
+    Description: model for vitals
+*/
+
 let mongoose = require('mongoose');
 
 // create a model class
