@@ -52,6 +52,7 @@ module.exports.processAddPage = (req, res, next) => {
         "time": req.body.time,
         "updatedOn": new Date(Date.now())
     });
+    
     appointmentModel.create(newAppointment, (err, appointmentModel) => {
         if(err) {
             console.log(err);
