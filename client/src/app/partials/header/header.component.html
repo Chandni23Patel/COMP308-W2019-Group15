@@ -36,12 +36,13 @@
           ><i class="fa fa-lg fa-wrench"></i> Services</a>
       </li>
      -->
-      <li class="nav-item">
+     <!--  *ngIf="isRole()"  -->
+      <li  class="nav-item">
         <a class="nav-link" routerLink="patient"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           ><i class="fa fa-lg fa-male"></i> Patient</a>
       </li>
 
-      <li class="nav-item">
+      <li  class="nav-item">
         <a class="nav-link" routerLink="appointment"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           ><i class="fa fa-lg fa-calendar-plus"></i> Appointments</a>
       </li>
@@ -69,14 +70,18 @@
       </li>
       -->
 
-        <li *ngIf="isLoggedIn()" class="navbar-text text-dark ml-5 mr-5 d-none d-lg-inline"><i class="fas fa-lg fa-user"></i>
+        <li *ngIf="isLoggedIn()" class="navbar-text text-dark ml-5 mr-5 d-none d-lg-inline">
+          <i class="fas fa-lg fa-user"></i>
           Welcome, {{ user.displayName }}</li>
 
-        <li *ngIf="isLoggedIn()" class="nav-item"><a (click)="onLogoutClick()" routerLink="logout" class="nav-link">
-          <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+        <li *ngIf="isLoggedIn()" class="nav-item">
+          <a (click)="onLogoutClick()" routerLink="logout" class="nav-link">
+          <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a>
+        </li>
 
-        <li *ngIf="!isLoggedIn()" class="nav-item"><a routerLink="login" class="nav-link">
-          <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+        <li  *ngIf="!isLoggedIn()" class="nav-item"><a routerLink="login" class="nav-link">
+          <i class="fas fa-lg fa-sign-in-alt"></i> Login</a>
+        </li>
 
     </ul>
   </div>

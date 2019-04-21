@@ -48,6 +48,7 @@ import { VitalComponent } from './pages/vital/vital.component';
 import { MedicineComponent } from './pages/medicine/medicine.component';
 import { AppointmentComponent } from './pages/appointment/appointment.component';
 import { PatientComponent } from './pages/patient/patient.component';
+import { HeaderpatientComponent } from './partials/headerpatient/headerpatient.component';
 
 export function jwtTokenGetter() {
   return localStorage.getItem('id_token');
@@ -88,7 +89,8 @@ export function jwtTokenGetter() {
     VitalComponent,
     MedicineComponent,
     AppointmentComponent,
-    PatientComponent
+    PatientComponent,
+    HeaderpatientComponent
   ],
   imports: [
     BrowserModule,

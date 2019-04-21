@@ -1,4 +1,10 @@
 <app-header></app-header>
+
+<!--
+<app-header  *ngIf="isRole()=='' || isRole() == 'Nurse' || isRole == 'Doctor' " ></app-header>
+
+<app-headerpatient  *ngIf="isRole()==null || isRole() == 'Nurse' || isRole == 'Doctor' " ></app-headerpatient>
+-->
 <flash-messages></flash-messages>
 <router-outlet></router-outlet>
 

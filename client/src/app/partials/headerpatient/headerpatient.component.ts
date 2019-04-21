@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
@@ -8,18 +7,19 @@ import { User } from 'src/app/models/user';
 
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-headerpatient',
+  templateUrl: './headerpatient.component.html',
+  styleUrls: ['./headerpatient.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderpatientComponent implements OnInit {
+
   user: User;
 
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.user = new User();
@@ -42,24 +42,7 @@ export class HeaderComponent implements OnInit {
     return result;
   }
 
-  isPatient(): boolean{
-    let result = this.authService.LoggedIn();
-    let report = false;
-    if(result) {
-      this.user = JSON.parse(localStorage.getItem('user'));
-    }
-    if(this.user.role == "Patient")
-    {
-      report = true;
-    }
-    return report;
-  }
-
-  isNotRole(): boolean{
-    return true;
-  }
-
-  isRoleName(): string{
+  isRole(): string{
     let result = this.authService.LoggedIn();
     if(result) {
       this.user = JSON.parse(localStorage.getItem('user'));
